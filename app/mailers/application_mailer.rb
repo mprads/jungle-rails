@@ -3,9 +3,8 @@ class ApplicationMailer < ActionMailer::Base
   layout 'mailer'
 
   def welcome_email(user)
-    @user = user
-    @url  = 'http://example.com/login'
-    mail(to: @user.email, subject: 'Welcome to My Awesome Site')
+    @order = order
+    mail(to: @order.email, subject: 'Order number #{@order.id}')
   end
 
 end
