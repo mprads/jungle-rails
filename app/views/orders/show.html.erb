@@ -2,14 +2,14 @@
 
   <header class="page-header">
     <div class="order-summary jumbotron">
-      <h1><%= @order.email %>'s order #<%= @order.id %> </h1>
+      <h1><%= @order.email %>'s order</h1>
       <h4>Thank you for your order!</h4>
     </div>
   </header>
     <table class="table table-bordered">
       <thead>
         <tr>
-          <th colspan="2">Product</th>
+          <th colspan="2">Order #<%= @order.id %></th>
           <th>Quantity</th>
           <th>Unit Price</th>
           <th>Price</th>
