@@ -25,7 +25,14 @@
         </dl>
       </div>
     </div>
-
+    <div class="row">
+      <dt>Reviews</dt>
+      <%@product.review.each do |review| %>
+        <dd> <%= review.user.first_name%> <%= review.user.last_name%></dd>
+        <dd><%= review.description %></dd>
+        <dd><%= review.rating %>/5 </dd>
+      <%end%>
+    </div>
   </article>
 
 </section>
