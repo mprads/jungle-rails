@@ -25,12 +25,14 @@
         </dl>
       </div>
     </div>
-    <div class="row">
-      <dt>Reviews</dt>
+    <div class="row" >
+      <h2>Reviews</h2>
       <%@product.review.each do |review| %>
+      <div class="jumbotron">
         <dd> <%= review.user.first_name%> <%= review.user.last_name%></dd>
         <dd><%= review.description %></dd>
         <dd><%= review.rating %>/5 </dd>
+      </div>
       <%end%>
     </div>
   </article>
