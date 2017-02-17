@@ -30,6 +30,7 @@
       <div class="form-group">
         Tell us your thoughts?: <%= form.text_area :description, class: 'form-control' %> <br>
       </div>
+      <%= form.select :rating, [5, 4, 3, 2, 1]%>
       <%= form.submit "Submit", class: "btn btn-primary" %>
     <%end%>
     </div>
