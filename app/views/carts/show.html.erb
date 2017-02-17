@@ -50,7 +50,8 @@
     </div>
   </div>
   <%else%>
-    <p>Uh Oh, looks like your cart is empty! Better head back to <%=link_to "fill your cart", [:products]%></p>
+    <p >Uh Oh, looks like your cart is empty! Head on back to finish shopping!</p>
+    <%=link_to "Get back to it", [:products],class: 'btn btn-primary'%>
   <%end%>
 
 </section>
