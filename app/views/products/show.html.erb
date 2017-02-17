@@ -26,13 +26,21 @@
       </div>
     </div>
     <div class="row" >
+    <%= form_for([@product, @new_review]) do |form| %>
+      <div class="form-group">
+        Tell us your thoughts?: <%= form.text_area :description, class: 'form-control' %> <br>
+      </div>
+      <%= form.submit "Submit", class: "btn btn-primary" %>
+    <%end%>
+    </div>
+    <div class="row" >
       <h2>Reviews</h2>
       <%@product.review.each do |review| %>
-      <div class="jumbotron">
-        <dd> <%= review.user.first_name%> <%= review.user.last_name%></dd>
-        <dd><%= review.description %></dd>
-        <dd><%= review.rating %>/5 </dd>
-      </div>
+        <div class="jumbotron">
+          <dd> <%= review.user.first_name%> <%= review.user.last_name%></dd>
+          <dd><%= review.description %></dd>
+          <dd><%= review.rating %>/5 </dd>
+        </div>
       <%end%>
     </div>
   </article>
