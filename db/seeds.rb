@@ -140,42 +140,42 @@ User.create!({
   first_name:'Charlie',
   last_name:'Chaplin',
   email:'a@a.a',
-  password_digest:'p'
+  password:'p'
   })
 
 User.create!({
   first_name:'Ronald',
   last_name:'McDonald',
   email:'b@b.b',
-  password_digest:'p'
+  password:'p'
   })
 
 User.create!({
   first_name:'Sterling',
   last_name:'Archer',
   email:'c@c.c',
-  password_digest:'p'
+  password:'p'
   })
 
 User.create!({
   first_name:'Bob',
   last_name:'Burger',
   email:'d@d.d',
-  password_digest:'p'
+  password:'p'
   })
 
 User.create!({
   first_name:'Lord',
   last_name:'Farquad',
   email:'e@e.e',
-  password_digest:'p'
+  password:'p'
   })
 
 User.create!({
   first_name:'Testy',
   last_name:'Testerson',
   email:'test@test.test',
-  password_digest:'p'
+  password:'p'
   })
 
 puts "Re-creating Reviews ..."
