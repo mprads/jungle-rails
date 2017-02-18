@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-  belongs_to :review
+  has_many :reviews
 
   has_secure_password
   validates :first_name, presence: true
