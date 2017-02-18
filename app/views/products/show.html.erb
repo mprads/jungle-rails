@@ -27,6 +27,16 @@
     </div>
     <div class="row" >
     <%= form_for([@product, @new_review]) do |form| %>
+      <% if form.object.errors.any? %>
+          <div class="alert alert-danger">
+            <strong>The following errors prevented saving:</strong>
+            <ul>
+            <% form.object.errors.full_messages.each do |error| %>
+              <li><%= error %></li>
+            <% end %>
+            </ul>
+        </div>
+        <% end %>
       <div class="form-group">
         Tell us your thoughts?: <%= form.text_area :description, class: 'form-control' %> <br>
       </div>

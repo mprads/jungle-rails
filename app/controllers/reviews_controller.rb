@@ -6,7 +6,9 @@ class ReviewsController < ApplicationController
     if @review.save
       redirect_to "/products/#{@review.product_id}"
     else
-      redirect_to "/products/#{@review.product_id}"
+      @reviews = @product.review.reverse
+      @new_review = @review
+      render '/products/show', id: [:product_id]
     end
   end
 
