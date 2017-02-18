@@ -1,6 +1,8 @@
 <div class="jumbotron">
-  <dd> <%= review.user.first_name%> <%= review.user.last_name%></dd>
-  <dd><%= review.description %></dd>
-  <dd><%= review.rating %>/5 </dd>
-  <%= link_to 'Destory',[@product, review], class: 'btn btn-xs btn-danger', method: :delete  %>
+  <h2> <%= review.user.first_name%> <%= review.user.last_name%></h2>
+  <p><%= review.description %></p>
+  <h3><%= review.rating %>/5 </h3>
+  <%if review.user_id == current_user.id%>
+    <%= link_to 'Destory',[@product, review], class: 'btn btn-xs btn-danger', method: :delete  %>
+  <%end%>
 </div>
