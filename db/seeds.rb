@@ -226,7 +226,7 @@ Review.create!({
 
 Review.create!({
   product_id: 1,
-  user_id: 3,
+  user_id: 4,
   description:'MAWP, MAWP, MAWP',
   rating: 4
   })
