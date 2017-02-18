@@ -37,7 +37,7 @@
     <div class="row" >
       <h2>Reviews</h2>
       <%@product.review.each do |review| %>
-        <%= render 'review', review: review%>
+        <%= render @reviews%>
       <%end%>
     </div>
   </article>
