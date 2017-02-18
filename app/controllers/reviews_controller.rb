@@ -6,7 +6,7 @@ class ReviewsController < ApplicationController
     if @review.save
       redirect_to "/products/#{@review.product_id}"
     else
-      redirect_to "/"
+      redirect_to "/products/#{@review.product_id}"
     end
   end
   private

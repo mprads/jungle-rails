@@ -37,16 +37,6 @@
     <div class="row" >
       <h2>Reviews</h2>
       <%@product.review.each do |review| %>
-        <% if form.object.errors.any? %>
-          <div class="alert alert-danger">
-            <strong>The following errors prevented saving:</strong>
-            <ul>
-            <% form.object.errors.full_messages.each do |error| %>
-              <li><%= error %></li>
-            <% end %>
-            </ul>
-        </div>
-        <% end %>
         <%= render 'review', review: review%>
       <%end%>
     </div>
