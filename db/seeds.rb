@@ -55,7 +55,7 @@ cat1.products.create!({
   name:  'Hipster Hat',
   description: Faker::Hipster.paragraph(4),
   image: open_asset('apparel3.jpg'),
-  quantity: 4,
+  quantity: 0,
   price: 34.49
 })
 
@@ -140,42 +140,48 @@ User.create!({
   first_name:'Charlie',
   last_name:'Chaplin',
   email:'a@a.a',
-  password:'p'
+  password:'p',
+  password_confirmation:'p'
   })
 
 User.create!({
   first_name:'Ronald',
   last_name:'McDonald',
   email:'b@b.b',
-  password:'p'
+  password:'p',
+  password_confirmation:'p'
   })
 
 User.create!({
   first_name:'Sterling',
   last_name:'Archer',
   email:'c@c.c',
-  password:'p'
+  password:'p',
+  password_confirmation:'p'
   })
 
 User.create!({
   first_name:'Bob',
   last_name:'Burger',
   email:'d@d.d',
-  password:'p'
+  password:'p',
+  password_confirmation:'p'
   })
 
 User.create!({
   first_name:'Lord',
   last_name:'Farquad',
   email:'e@e.e',
-  password:'p'
+  password:'p',
+  password_confirmation:'p'
   })
 
 User.create!({
   first_name:'Testy',
   last_name:'Testerson',
   email:'test@test.test',
-  password:'p'
+  password:'p',
+  password_confirmation:'p'
   })
 
 puts "Re-creating Reviews ..."

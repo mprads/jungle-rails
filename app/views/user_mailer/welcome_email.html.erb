@@ -7,7 +7,7 @@
   <h1>Thank you for you purchase,</h1>
   <p>
     Your order consisted of,<br>
-    <% @order.line_items.each do |item| %>.
+    <% @order.line_items.each do |item| %>
     <%= item.product.name%> (<%=item.quantity%>)<br>
     <%end%>
   </p>
