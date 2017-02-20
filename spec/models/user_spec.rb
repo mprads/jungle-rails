@@ -70,6 +70,14 @@ RSpec.describe User, type: :model do
     end
 
     it 'should require email to be unique' do
+        @conflictor = User.create({
+           first_name: 'Jon',
+          last_name: 'Do',
+          email: 'a@a.a',
+          password: 'psswrd',
+          password_confirmation: 'psswrd'
+          })
+
         @user = User.create({
           first_name: 'John',
           last_name: 'Doe',
@@ -77,7 +85,7 @@ RSpec.describe User, type: :model do
           password: 'password',
           password_confirmation: 'password'
           })
-        expect(@user.errors.full_messages).to include("Name can't be blank")
+        expect(@user.errors.full_messages).to include("Email has already been taken")
     end
 
     it 'should require a password' do
