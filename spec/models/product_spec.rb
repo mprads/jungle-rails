@@ -4,6 +4,16 @@ RSpec.describe Product, type: :model do
   describe 'Validations' do
       let(:category) { Category.create(name: 'test')}
 
+      it 'Should require a name' do
+        @product = category.products.create({
+          name: nil,
+          description: 'Test testing',
+          price: 10.99,
+          quantity: 5
+          })
+        expect(@product.id).to be_nil
+    end
+
       it 'Should require a description' do
         @product = category.products.create({
           name: 'Tester',
@@ -11,7 +21,7 @@ RSpec.describe Product, type: :model do
           price: 10.99,
           quantity: 5
           })
-        expect(@product.id).to_be nil
+        expect(@product.id).to be_nil
     end
 
     it 'Should require a price' do
@@ -21,27 +31,18 @@ RSpec.describe Product, type: :model do
           price: nil,
           quantity: 5
           })
-        expect(@product.id).to_be nil
+        expect(@product.id).to be_nil
     end
 
-    it 'Should require a name' do
+    it 'Should require a quantity' do
         @product = category.products.create({
-          name: nil,
+          name: 'Tester',
           description: 'Test testing',
           price: 10.99,
-          quantity: 5
+          quantity: nil
           })
-        expect(@product.id).to_be nil
+        expect(@product.id).to be_nil
     end
 
-    it 'Should require a name' do
-        @product = category.products.create({
-          name: nil,
-          description: 'Test testing',
-          price: 10.99,
-          quantity: 5
-          })
-        expect(@product.id).to_be nil
-    end
   end
 end
