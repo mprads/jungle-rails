@@ -11,7 +11,7 @@ RSpec.describe User, type: :model do
           password: nil,
           password_confirmation: 'password'
           })
-        expect(@product.errors.full_messages).to include("Name can't be blank")
+        expect(@user.errors.full_messages).to include("Password can't be blank")
     end
 
     it 'should require a password confirmation' do
@@ -22,40 +22,40 @@ RSpec.describe User, type: :model do
           password: 'password',
           password_confirmation: nil
           })
-        expect(@product.errors.full_messages).to include("Name can't be blank")
+        expect(@user.errors.full_messages).to include("Password confirmation can't be blank")
     end
 
     it 'should require a first name' do
-        @product = category.products.create({
+        @user = User.create({
           first_name: nil,
           last_name: 'Doe',
           email: 'email@email.email',
           password: 'password',
           password_confirmation: 'password'
           })
-        expect(@product.errors.full_messages).to include("Name can't be blank")
+        expect(@user.errors.full_messages).to include("First name can't be blank")
     end
 
     it 'should require a last name' do
-        @product = category.products.create({
+        @user = User.create({
           first_name: 'John',
           last_name: nil,
           email: 'email@email.email',
           password: 'password',
           password_confirmation: 'password'
           })
-        expect(@product.errors.full_messages).to include("Name can't be blank")
+        expect(@user.errors.full_messages).to include("Last name can't be blank")
     end
 
     it 'should require an email' do
-        @product = category.products.create({
+        @user = User.create({
           first_name: 'John',
-          last_name: nil,
+          last_name: 'Doe',
           email: nil,
           password: 'password',
           password_confirmation: 'password'
           })
-        expect(@product.errors.full_messages).to include("Name can't be blank")
+        expect(@user.errors.full_messages).to include("Email can't be blank")
     end
 
     it 'should require passwords to be identical' do
@@ -66,7 +66,7 @@ RSpec.describe User, type: :model do
           password: 'psswrd',
           password_confirmation: 'password'
           })
-        expect(@product.errors.full_messages).to include("Name can't be blank")
+        expect(@user.errors.full_messages).to include("Password confirmation doesn't match Password")
     end
 
     it 'should require email to be unique' do
@@ -77,8 +77,18 @@ RSpec.describe User, type: :model do
           password: 'password',
           password_confirmation: 'password'
           })
-        expect(@product.errors.full_messages).to include("Name can't be blank")
+        expect(@user.errors.full_messages).to include("Name can't be blank")
     end
 
+    it 'should require a password' do
+        @user = User.create({
+          first_name: 'John',
+          last_name: 'Doe',
+          email: 'email@email.email',
+          password: 'password',
+          password_confirmation: 'password'
+          })
+        expect(@user.id).to be_truthy
+    end
   end
 end
