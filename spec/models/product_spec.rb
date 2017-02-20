@@ -14,7 +14,6 @@ RSpec.describe Product, type: :model do
         expect(@product.errors.full_messages).to include("Name can't be blank")
     end
 
-
     it 'should require a price' do
         @product = category.products.create({
           name: 'Tester',
