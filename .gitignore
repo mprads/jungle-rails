@@ -12,6 +12,8 @@
 # Ignore db creds / settings
 /config/database.yml
 
+/public/uploads
+
 *.rbc
 capybara-*.html
 .rspec
