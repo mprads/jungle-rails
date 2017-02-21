@@ -110,4 +110,31 @@ RSpec.describe User, type: :model do
         expect(@user.id).to be_truthy
     end
   end
+
+  describe '.authenticate_with_credentials' do
+
+    it 'should not be case sensitive' do
+        @user = User.create({
+          first_name: 'John',
+          last_name: 'Doe',
+          email: 'email@email.email',
+          password: 'password',
+          password_confirmation: 'password'
+          })
+
+        expect(User.authenticate_with_credentials('EMAIL@EMAIL.EMAIL', 'password')).to eql_to@user
+    end
+
+    it 'should not care about trailing or leading whitespace' do
+        @user = User.create({
+          first_name: 'John',
+          last_name: 'Doe',
+          email: 'email@email.email',
+          password: 'password',
+          password_confirmation: 'password'
+          })
+
+        expect(User.authenticate_with_credentials('   email@email.email  ', 'password')).to eql_to@user
+    end
+  end
 end
