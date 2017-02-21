@@ -5,13 +5,9 @@
       <h4><%= product.name %></h4>
     <% end %>
   </header>
-  <% if product.total_rating > 0 %>
-    <p>
-      <%= formatted_review(product) %>
-    </p>
-  <%else%>
-    <p>Not yet rated</p>
-  <%end%>
+
+  <%= render "ratings", product: product %>
+
   <p class="description">
     <%= product.description %>
   </p>

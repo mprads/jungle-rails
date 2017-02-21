@@ -1,0 +1,7 @@
+<% if product.total_rating > 0 %>
+  <p>
+  <%= formatted_review(product) %>
+  </p>
+<%else%>
+  <p>Not yet rated</p>
+<%end%>
