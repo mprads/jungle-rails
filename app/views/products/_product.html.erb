@@ -5,12 +5,10 @@
       <h4><%= product.name %></h4>
     <% end %>
   </header>
-  <%total_rating = 0%>
-    <%product.reviews.each do |rating|%>
-      <% total_rating += rating.rating%>
-  <%end%>
-  <%if total_rating > 0%>
-    <p><%= total_rating / product.reviews.size%>/5 -<%=product.reviews.size%> reviews</p>
+  <% if product.total_rating > 0 %>
+    <p>
+      <%= formatted_review(product) %>
+    </p>
   <%else%>
     <p>Not yet rated</p>
   <%end%>
