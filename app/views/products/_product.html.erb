@@ -5,15 +5,9 @@
       <h4><%= product.name %></h4>
     <% end %>
   </header>
-  <%total_rating = 0%>
-    <%product.reviews.each do |rating|%>
-      <% total_rating += rating.rating%>
-  <%end%>
-  <%if total_rating > 0%>
-    <p><%= total_rating / product.reviews.size%>/5 -<%=product.reviews.size%> reviews</p>
-  <%else%>
-    <p>Not yet rated</p>
-  <%end%>
+
+  <%= render "ratings", product: product %>
+
   <p class="description">
     <%= product.description %>
   </p>
@@ -29,7 +23,7 @@
   <aside class="price">
     <%= humanized_money_with_symbol product.price %>
   </aside>
-  <% if product.quantity == 0%>
+  <% if product.sold_out? %>
     <aside class="soldout">
       sold out!
     </aside>
